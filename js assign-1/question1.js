@@ -5,3 +5,25 @@
 // 1
 
 
+var firstFun = function(){
+    console.log("this is firstFun function");
+}
+
+var mainFun = function(fun){
+     return fun;
+}
+
+console.log(mainFun(firstFun));
+
+
+//------------- or -------------------
+
+var firstFun = function(){
+    console.log("this is firstFun function");
+}
+
+var mainFun = function(fun){
+      fun();
+}
+
+mainFun(firstFun);

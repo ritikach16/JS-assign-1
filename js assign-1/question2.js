@@ -16,4 +16,4 @@ var anotherName = (fname, lname) => fname.charAt(0) + lname.charAt(0);
 
 
 console.log(funName("Ritika", "Chauhan"));
-console.log(anotherName("Abcd", "Efgh"));
+console.log(anotherName("Roger", "Waters"));
