@@ -22,8 +22,8 @@ var firstFun = function(){
     console.log("this is firstFun function");
 }
 
-var mainFun = function(fun){
+var mainSecFun = function(fun){
       fun();
 }
 
-mainFun(firstFun);
+mainSecFun(firstFun);
