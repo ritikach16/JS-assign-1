@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+.menus {
+    border-left: 2px solid black;
+    padding: 10px;
+}
+
+
+.tables {
+    padding: 10px;
+}
+
+.card {
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 2px rgb(221, 216, 216);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.tableNum .card {
+    margin: 10px auto;
+}
+
+.txt-center {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.searchTable,
+.searchMenu {
+    border-radius: 5px;
+    box-shadow: 1px 2px rgb(221, 216, 216);
+    margin: 10px;
+    border: 1px solid rgb(221, 216, 216);
+    width: 50%;
+}
+
+.searchTable {
+    width: 70%;
+    margin: auto;
+}
+
+.searchBox {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    z-index: 200;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    background: white;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+}
+
+.modal h1 {
+    color: #521751;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.modal-input {
+    margin: 0.5rem 0;
+}
+
+.modal-input textarea {
+    width: 100%;
+    font: inherit;
+    resize: none;
+}
+
+.modal-input textarea:focus {
+    outline: none;
+    background: #ffdbfe;
+    border-color: #521751;
+}
+
+.modal-actions {
+    text-align: right;
+}
+
+.modal-control {
+    padding: 1rem;
+    border: 1px solid #521751;
+    text-align: center;
+}
+
+.open {
+    display: block;
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+/* modal pop-ups */
+.pop-up {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 220vh;
+    top: 0;
+    position: absolute;
+    display: none;
+}
+
+.popup-content {
+    height: 500px;
+    width: 800px;
+    background: white;
+    margin-top: 150px;
+    margin-left: 400px;
+    border-radius: 5px;
+}
+
+#close-btn {
+    padding-left: 400px;
+}
+
+#sno {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+}
+
+#item-name {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+}
+
+#item-price {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+}
+
+#servings {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    text-align: center;
+}
+
+#delete-icon {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+}
+
+h6 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 40px;
+}
+
+#total-bill {
+    padding-left: 50px;
+}
+
+#close-session {
+    padding-left: 500px;
+    padding-top: 80px;
+}
+
+#close-session p {
+    font-size: 20px;
+}
+
+#close-btn {
+    float: right;
+}
+
+#close-btn:hover {
+    cursor: pointer;
+}
+ 
+.header {
+    background: rgb(0, 0, 205);
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: white;
+  }
+  
+  .items-details {
+    margin: 20px;
+    display: flex;
+    flex-flow: row;
+    gap: 40px;
+  }
+/* media queries */
+
+@media (max-width: 995px) {
+    .searchTable {
+        width: 60%;
+        margin: 10px;
+    }
+
+    .tableNum .card {
+        margin: 10px;
+    }
+
+    .menus {
+        border: none;
+        padding: 10px;
+    }
+}
