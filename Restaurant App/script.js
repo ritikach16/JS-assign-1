@@ -235,7 +235,7 @@ function openModal(tableId) {
     document.getElementById("delete-icon").innerHTML = deleteIcon;
     document.getElementById("close-session").innerHTML = closeSession;
     document.querySelector(".pop-up").style.display = "flex";
-    document.getElementById("total-bill").style.display = "none";
+    // document.getElementById("total-bill").style.display = "none";
 }
 
 function openPopUp(id) {
@@ -245,7 +245,7 @@ function openPopUp(id) {
     openModal(matches[0]);
 }
 
-function closePopUp(id) {
+function closePopUp() {
     document.querySelector(".pop-up").style.display = "none";
 }
 
@@ -286,7 +286,9 @@ function generateBill(tableId) {
         itemName = "<h5>Item</h5>",
         itemPrice = "<h5>Price</h5>";
     let servings = "<h5>Number of servings</h5>";
+    let deleteIcon = "<h5>Delete</h5>";
     var totalbill = 0;
+    
     for (let i = 0; i < result.length; i++) {
         let first = result[i][0];
         let quantity = result[i][1];
@@ -296,22 +298,58 @@ function generateBill(tableId) {
         sNo += "<p>" + val + "</p>";
         itemName += "<p>" + menu[itemId].name + "</p>";
         itemPrice += "<p>" + menu[itemId].price + "</p>";
-        servings += "<p>" + quantity + "</p>";
+        servings +=
+            "<input  type='number' name='" +
+            tableId +
+            "' value='" +
+            quantity +
+            "' size='1' onchange='increment(this," +
+            itemId +
+            "," +
+            i +
+            ")' /> ";
+        deleteIcon +=
+            "<p onclick='deleteItem(this, " +
+            i +
+            ", " +
+            tableId +
+            "," +
+            quantity +
+            "," +
+            menu[itemId].price +
+            ")'  > <i class='fa-solid fa-trash-can'></i></p>";
     }
+    let closeSession =
+        "<button onclick='generateBill(" +
+        tableId +
+        ")' class='btn btn-primary'>Generate Bill</button>";
+
+        let clearTable =
+        "<button onclick='clearTheTable(" +
+        tableId +
+        ")' class='btn btn-secondary'>Clear the table</button>";
     billId = "tableBill-" + tableId;
     const tableName = document.getElementById(billId);
     const spans = tableName.getElementsByTagName("span");
     spans[1].innerHTML = 0;
     spans[0].innerHTML = 0;
-    sessionStorage.removeItem(tableId);
+   
+    // return totalbill;
+    console.log(totalbill);
     document.getElementById("sno").innerHTML = sNo;
     document.getElementById("item-name").innerHTML = itemName;
     document.getElementById("item-price").innerHTML = itemPrice;
     document.getElementById("servings").innerHTML = servings;
     document.getElementById("total-bill").innerHTML = totalbill;
-    document.getElementById("delete-icon").innerHTML = "";
-    document.getElementById("close-session").innerHTML = "";
-    document.getElementById("total-bill").style.display = "";
+    document.getElementById("delete-icon").innerHTML = deleteIcon;
+    document.getElementById("close-session").innerHTML = closeSession;
+    document.getElementById("clear-table").innerHTML = clearTable;
+
+}
+
+function clearTheTable(id){
+    sessionStorage.removeItem(id);
+    closePopUp();
 }
 
 

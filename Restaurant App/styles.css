@@ -186,11 +186,16 @@ h6 {
 
 #close-session {
     padding-left: 500px;
-    padding-top: 80px;
+    padding-top: 120px;
 }
 
 #close-session p {
     font-size: 20px;
+}
+
+#clear-table{
+    padding-left: 650px;
+    padding-bottom: 80px;
 }
 
 #close-btn {
